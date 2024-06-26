@@ -190,7 +190,7 @@ nav a:hover ~ a {
 }
 
 #projects.hoovered {
-    background-color: #000; /* Background color for the section on hover */
+    background-color: #413d3d; /* Background color for the section on hover */
 }
 
 #projects h2 {
