@@ -2,7 +2,7 @@
 
 // Data for skills
 const skills = [
-    'JAVA', 'PHP',  'PYTHON', 'HTML', 'CSS', 'MySQL', 'FIGMA', 
+    'JAVA', 'PHP',  'PYTHON', 'HTML', 'CSS', 'MySQL', 'FIGMA', 'GITHUB', 
 ];
 
 // Data for projects
