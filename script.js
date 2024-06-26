@@ -49,9 +49,19 @@ function addProjects(projects) {
         projectElement.innerHTML = `
             <h3>${project.title}</h3>
             <p>${project.description}</p>
-           
         `;
         projectsContainer.appendChild(projectElement);
+    });
+
+    // Re-add event listeners after dynamically adding the projects
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        card.addEventListener('mouseenter', () => {
+            document.querySelector('#projects').classList.add('hoovered');
+        });
+        card.addEventListener('mouseleave', () => {
+            document.querySelector('#projects').classList.remove('hoovered');
+        });
     });
 }
 
