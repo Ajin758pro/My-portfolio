@@ -84,7 +84,7 @@ addSkills(skillsData);
 const softwareProjects = [
     {
         title: 'NSS Management System',
-        description: 'It is on a web application called the NSS Management System, which is designed to manage the NSS Unit in a college. This application is being developed using HTML, CSS, JavaScript, PHP, and MySQL.'
+        description: 'It is a web application which is designed to manage the NSS Unit in a college. This application is being developed using HTML, CSS, JavaScript, PHP, and MySQL.'
     },
     {
         title: 'Sports Tracker',
