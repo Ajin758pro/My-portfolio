@@ -229,15 +229,23 @@ nav {
     color: #fff;
     padding: 1.8rem;
     display: flex;
-    justify-content: flex-end; /* Align items to the right */
+    justify-content: space-between; /* Ensure brand and links are spaced apart */
+    align-items: center;
+}
+
+nav .brand {
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #fff;
+    margin-left: 1rem; /* Adjust margin as needed */
 }
 
 nav ul {
     list-style: none;
     display: flex;
-    justify-content: flex-end; /* Ensure the items are right-aligned */
-    margin-left: auto; /* Push the items to the right */
-    margin-right:5rem;
+    justify-content: flex-end;
+    margin: 0; /* Reset default margin */
+    padding: 0; /* Reset default padding */
 }
 
 nav li {
@@ -247,40 +255,51 @@ nav li {
 nav a {
     color: #fff;
     text-decoration: none;
-    font-size: 1.2rem; /* Base font size */
-    transition: all 0.3s ease; /* Smooth transition for hover effects */
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
 }
 
 nav a:hover {
-    color:#FFFFDD; /* Change to your desired hover color */
-    font-size: 1.5rem; /* Increased font size on hover */
+    color:#ffffff;
+    font-size: 1.5rem;
 }
 
 nav a:hover ~ a {
-    filter: blur(2px); /* Blur effect on sibling links */
-    opacity: 0.6; /* Reduce opacity for sibling links */
+    filter: blur(2px);
+    opacity: 0.6;
 }
-nav ul .brand {
-    margin-right: 50rem;
-    font-size: 1.7rem;
-    font-weight: bold;
-    color: #fff;
-}
+
 /* Responsive Design */
 @media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
+    nav {
+        flex-direction: column; /* Stack the navbar items vertically */
         align-items: flex-start;
     }
 
-    nav ul li {
+    nav .brand {
+        margin-bottom: 1rem;
+        margin-left: 1rem;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%; /* Ensure full width */
+    }
+
+    nav li {
         margin: 0.5rem 0;
     }
 
-    nav ul .brand {
-        margin-bottom: 1rem;
+    nav a {
+        font-size: 1.2rem;
+    }
+
+    nav a:hover {
+        font-size: 1.3rem;
     }
 }
+
 /* About Section */
 #about {
     padding: 6rem 2rem;
