@@ -40,7 +40,8 @@ const skillsData = [
         skills: [
             { name: 'Github', icon: 'img/git.png', level: 90 },
             { name: 'MySQL', icon: 'img/-mysql-.png', level: 95 },
-            { name: 'Figma', icon: 'img/figma-logo.png', level: 95 }
+            { name: 'Figma', icon: 'img/figma-logo.png', level: 95 },
+            { name: 'Illustrator', icon: 'img/Adobe_Illustrator_CC_icon.svg.png', level: 85 }
         ]
     },
     {
@@ -103,16 +104,21 @@ const softwareProjects = [
 const uiuxProjects = [
     {
         title: 'UI/UX Project 1',
-        description: 'Description for UI/UX project 1.',
-        link: 'https://example.com/project1'
+        description: 'Home page design of a website designed using figma.',
+        link: 'https://www.figma.com/proto/goC6CGk3hi7SsQxa2sSn5m/home_page?page-id=0%3A1&node-id=29-664&viewport=81%2C308%2C0.26&t=UPQlDl7w66toXP7U-1&scaling=min-zoom&content-scaling=fixed'
     },
     {
         title: 'UI/UX Project 2',
-        description: 'Description for UI/UX project 2.',
-        link: 'https://example.com/project2'
+        description: 'Design of a website that I am currently doing using figma',
+        link: 'https://www.figma.com/proto/0EyHmdmlXbUp5K0ccChf90/Cars-pro?page-id=0%3A1&node-id=1-3&starting-point-node-id=1%3A3&t=6sr65N0cbcp5WU5G-1'
+    },
+    {
+        title: 'UI/UX Project 3',
+        description: 'Home page and signup Design of a gyms website that designed using figma',
+        link: 'https://www.figma.com/proto/FuFb1j9WgCj9HS2b4zh8Fm/project-1?page-id=0%3A1&node-id=7-119&starting-point-node-id=7%3A119&t=09gprdqqr58myPrV-1'
     }
-];
 
+];
 function addProjects(projects, containerId) {
     const categoryContainer = document.querySelector(`#${containerId} .category-container`);
     projects.forEach(project => {
