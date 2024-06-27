@@ -9,6 +9,219 @@ body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
 }
+/* Line Container */
+#line-container {
+    width: 100%;
+    height: 10px; /* Adjust height as needed */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0; /* Background color for the container */
+    overflow: hidden; /* Ensure the line doesn't overflow the container */
+    position: relative;
+}
+
+/* Horizontal Line */
+.horizontal-line {
+    width: 0;
+    height: 4px; /* Adjust height for line thickness */
+    background-color: #3876BF; /* Customize line color */
+    animation: drawLine 2s ease-in-out forwards; /* Animation settings */
+}
+
+/* Keyframes for Line Drawing Animation */
+@keyframes drawLine {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+/* line animation end */
+/* Line Container */
+#wavy-line-container {
+    width: 100%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+/* Wavy Line */
+.wavy-line {
+    width: 100%;
+    height: 4px;
+    background: repeating-linear-gradient(
+        90deg,
+        #3876BF,
+        #3876BF 5px,
+        transparent 5px,
+        transparent 10px
+    );
+    animation: moveWavyLine 2s linear infinite;
+}
+
+/* Keyframes for Wavy Line Animation */
+@keyframes moveWavyLine {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+        background-position: 20px 0;
+    }
+}
+/* wavy end */
+/* Line Container */
+#growing-line-container {
+    width: 100%;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+/* Growing Line */
+.growing-line {
+    width: 0;
+    height: 4px;
+    background-color: #3876BF;
+    animation: growShrink 2s ease-in-out infinite;
+}
+
+/* Keyframes for Growing and Shrinking Animation */
+@keyframes growShrink {
+    0%, 100% {
+        width: 0;
+    }
+    50% {
+        width: 100%;
+    }
+}
+/* Line Container */
+#pulsating-line-container {
+    width: 100%;
+    height: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #ffffff;
+}
+
+/* Pulsating Line */
+.pulsating-line {
+    width: 100%;
+    height: 4px;
+    background-color: #3876BF;
+    animation: pulsate 3s ease-in-out infinite;
+}
+
+/* Keyframes for Pulsating Animation */
+@keyframes pulsate {
+    0%, 100% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(0.5);
+    }
+}
+/* Ball Container */
+#bouncing-ball-container {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+/* Bouncing Ball */
+.bouncing-ball {
+    width: 50px;
+    height: 50px;
+    background-color: #3876BF;
+    border-radius: 50%;
+    animation: bounce 2s infinite;
+}
+
+/* Keyframes for Bouncing Animation */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-150px);
+    }
+    60% {
+        transform: translateY(-75px);
+    }
+}
+/* Square Container */
+#rotating-square-container {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+/* Rotating Square */
+.rotating-square {
+    width: 50px;
+    height: 50px;
+    background-color: #3876BF;
+    animation: rotate 2s linear infinite;
+}
+
+/* Keyframes for Rotating Animation */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+/* Circle Container */
+#color-changing-circle-container {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+/* Color Changing Circle */
+.color-changing-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #3876BF;
+    border-radius: 50%;
+    animation: changeColor 2s linear infinite;
+}
+
+/* Keyframes for Color Changing Animation */
+@keyframes changeColor {
+    0% {
+        background-color: #3876BF;
+    }
+    50% {
+        background-color: #ff5733;
+    }
+    100% {
+        background-color: #3876BF;
+    }
+}
 
 /* Navbar */
 nav {
@@ -47,6 +260,27 @@ nav a:hover ~ a {
     filter: blur(2px); /* Blur effect on sibling links */
     opacity: 0.6; /* Reduce opacity for sibling links */
 }
+nav ul .brand {
+    margin-right: 50rem;
+    font-size: 1.7rem;
+    font-weight: bold;
+    color: #fff;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+
+    nav ul .brand {
+        margin-bottom: 1rem;
+    }
+}
 /* About Section */
 #about {
     padding: 6rem 2rem;
@@ -73,7 +307,7 @@ nav a:hover ~ a {
     border-radius: 10%;
     margin-right: 2rem;
     width: 300px;
-    height: 350px;
+    height: 370px;
     animation: fadeIn 2s ease-in-out;
     transition: transform 0.3s ease-in-out;
 }
