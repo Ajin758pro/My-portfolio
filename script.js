@@ -180,18 +180,67 @@ addCertifications(certifications);
 
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.querySelector('nav');
+    let lastScrollY = window.scrollY;
+    const navbarHeight = navbar.offsetHeight;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > lastScrollY && window.scrollY > navbarHeight) {
+            // Scrolling down and not at the top
+            navbar.style.transform = 'scale(0.8)';
+            navbar.style.opacity = '0';
+            setTimeout(() => {
+                navbar.style.display = 'none';
+            }, 500); // Match the transition duration
+        } else if (window.scrollY <= 0) {
+            // At the top of the page
+            navbar.style.display = 'flex';
+            setTimeout(() => {
+                navbar.style.transform = 'scale(1)';
+                navbar.style.opacity = '1';
+            }, 10); // Slight delay to allow display to take effect
+        } else if (window.scrollY < lastScrollY && window.scrollY > 0) {
+            // Scrolling up but not at the top
+            navbar.style.display = 'flex';
+            setTimeout(() => {
+                navbar.style.transform = 'scale(1)';
+                navbar.style.opacity = '1';
+            }, 10); // Slight delay to allow display to take effect
+        }
+        lastScrollY = window.scrollY;
+    });
+
+    // Ensure the About section is not hidden behind the navbar
+    const aboutSection = document.querySelector('#about');
+    aboutSection.style.paddingTop = `${navbarHeight}px`;
+});
 
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const sections = document.querySelectorAll('.animate-on-hover');
 
-//     sections.forEach(section => {
-//         section.addEventListener('mouseenter', () => {
-//             section.classList.add('animate');
-//         });
-//         section.addEventListener('mouseleave', () => {
-//             section.classList.remove('animate');
-//         });
-//     });
-// });
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    const aboutSection = document.querySelector('#about');
+    const aboutContainer = document.querySelector('.about-container');
+    const aboutImg = document.querySelector('.about-container img');
+    const aboutText = document.querySelector('.about-text');
+    let lastScrollY = window.scrollY;
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > lastScrollY) {
+            // Scrolling down
+            aboutImg.style.animation = 'slideOutLeft 1s forwards';
+            aboutText.style.animation = 'slideOutRight 1s forwards';
+        } else {
+            // Scrolling up
+            aboutImg.style.animation = 'slideInLeft 1s forwards';
+            aboutText.style.animation = 'slideInRight 1s forwards';
+        }
+        lastScrollY = window.scrollY;
+    });
+});
+
+
 
